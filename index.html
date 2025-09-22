@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beautiful Table</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 20px;
+      background: #f4f7fa;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      border-radius: 12px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      min-width: 600px;
+    }
+
+    th, td {
+      padding: 14px 16px;
+      text-align: center;
+    }
+
+    th {
+      background: linear-gradient(45deg, #007BFF, #00C6FF);
+      color: white;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    td {
+      border-bottom: 1px solid #eee;
+      font-size: 14px;
+      color: #333;
+    }
+
+    tr:nth-child(even) td {
+      background: #f9f9f9;
+    }
+
+    tr:hover td {
+      background: #eaf6ff;
+      transition: 0.3s;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      table {
+        font-size: 13px;
+      }
+      th, td {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h2>Employee Task Table</h2>
+
+<div class="table-container">
+  <table id="taskTable">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>ID</th>
+      <th>Task Number</th>
+    </tr>
+
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>28</td>
+      <td>EMP101</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Maria Anders</td>
+      <td>32</td>
+      <td>EMP102</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Francisco Chang</td>
+      <td>29</td>
+      <td>EMP103</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>John Doe</td>
+      <td>35</td>
+      <td>EMP104</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Emma Watson</td>
+      <td>27</td>
+      <td>EMP105</td>
+      <td></td>
+    </tr>
+  </table>
+</div>
+
+<script>
+  // Auto-generate Task Numbers
+  const table = document.getElementById("taskTable");
+  for (let i = 1; i < table.rows.length; i++) {
+    table.rows[i].cells[3].innerText = i;
+  }
+</script>
+
+</body>
+</html># Table-design
